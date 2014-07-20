@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :verbs
+ 
+  get 'home/index'
 
+   mount Soulmate::Server, :at => "/autocomplete"
+ 
+  resources :verbs
   resources :nouns
+ 
+  root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
